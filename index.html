@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>css3过渡</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<style>
+	.demo{width:360px; margin:60px auto 10px auto}
+	@media only screen and (min-width: 420px) {
+		.demo{width:800px; margin:60px auto 10px auto}
+	}
+	.box{float:left; width:380px; height:260px}
+	.clear{clear:both}
+
+	/*
+		1.图片缩放，文字向上出现，透明度变化，图片透明度变化，出现边框，边框延申变化
+	*/
+	.box{
+		overflow:hidden;
+	}
+	.he_border1:hover .he_border1_img{
+		transform:scale(1.1,1.1); 
+		opacity:0.6;
+		transition-property:opacity,transform;
+		transition-duration:0.5s;		
+	} 
+	.he_border1:hover .he_border1_caption_p{
+		opacity:1;
+		color:white;
+		transition-property:opacity,color;
+		transition-duration:0.5s;
+	}
+
+	.he_border1:hover .he_border1_img{
+		position:absolute;
+		transform:scale(1.1);
+		opacity:0.6;
+	}
+	.he_border1:hover .he_border1_caption::before,.he_border1:hover .he_border1_caption::after{
+		opacity:1;
+		transform:scale(1);
+	}
+	.he_border1:hover .he_border1_caption_p{
+		top:45%;
+		opacity:1;
+	}
+
+	/*
+		2.图片缩放，文字向上出现，透明度变化，图片透明度变化，出现边框，边框延申变化
+	*/
+	.he_border2:hover .he_border2_img{
+		transform:scale(1.1,1.1);
+		opacity:0.5;
+		transition-property:opacity,transform;
+		transition-duration:0.5s;
+	}
+	.he_border2_caption_p{
+		top:100%;
+	}
+	.he_border2:hover .he_border2_caption_p{
+		opacity:1;
+		color:white;
+		top:60%;
+		transition-property:opacity,color,top;
+		transition-duration:0.5s;
+	}
+
+	.he_border2:hover .he_border2_img{
+		position:absolute;
+		transform:scale(1.1);
+		opacity:0.6;
+	}
+	.he_border2:hover .he_border2_caption::before,.he_border2:hover .he_border2_caption::after{
+		opacity:1;
+		transform:scale(1);
+	}
+	.he_border2:hover .he_border2_caption_p{
+		top:45%;
+		opacity:1;
+	}
+	/*
+		3.图片竖直翻转，背景显现，文字透明度改变
+	*/
+	.he_3DFlipX_inner:hover .he_3DFlipX_img{
+		transform:rotateX(180deg);
+		transition-property:transform;
+		transition-duration:0.5s;
+	}
+	.he_3DFlipX_inner:hover .he_3DFlipX_caption{
+		opacity:1;
+		backface-visibility:visible;
+		transform:rotateX(0);
+		transition-property:transform,opacity,backface-visibility;
+		transition-duration:0.5s;
+
+	}
+	/*
+		4.图片竖直翻转，背景显现，文字透明度改变
+	*/
+	.he_3DFlipY_inner:hover .he_3DFlipY_img{
+		transform:rotateY(180deg);
+		transition-property:transform;
+		transition-duration:0.5s;
+	}
+	.he_3DFlipY_inner:hover .he_3DFlipY_caption{
+		opacity:1;
+		backface-visibility:visible;
+		transform:rotateY(0);
+		transition-property:transform,opacity,backface-visibility;
+		transition-duration:0.5s;
+	}
+	
+
+</style>
+
+</head>
+
+<body>
+
+<div class="demo">
+
+	<div class="box">
+		<div class="he_border1">
+			<img class="he_border1_img" src="images/pro_1.jpg" alt="Image 01">
+			<div class="he_border1_caption">
+				<h3 class="he_border1_caption_h">过渡</h3>
+				<p class="he_border1_caption_p">过渡效果+演示+源码</p>
+				<a class="he_border1_caption_a" href="#"></a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="box">
+		<div class="he_border2">
+			<img class="he_border2_img" src="images/pro_2.jpg" alt="Image 01">
+			<div class="he_border2_caption">
+				<h3 class="he_border2_caption_h">过渡</h3>
+				<p class="he_border2_caption_p">过渡效果+演示+源码</p>
+				<a class="he_border2_caption_a" href="#"></a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="box">
+		<div class="he_3DFlipX">
+			<div class="he_3DFlipX_inner">
+				<div class="he_3DFlipX_img">
+					<img src="images/pro_3.jpg" alt="img01">
+				</div>
+				<div class="he_3DFlipX_caption">
+					<h3>过渡</h3>
+					<p>过渡效果+演示+源码</p>
+				</div>
+				<a href="#"></a>
+			 </div>
+		</div>
+	</div>
+	
+	<div class="box">
+		<div class="he_3DFlipY">
+			<div class="he_3DFlipY_inner">
+				<div class="he_3DFlipY_img">
+					<img src="images/pro_1.jpg" alt="img01">
+				</div>
+				<div class="he_3DFlipY_caption">
+					<h3>过渡</h3>
+					<p>过渡效果+演示+源码</p>
+				</div>
+				<a href="#"></a>
+			 </div>
+		</div>
+	</div>
+	
+	<div class="clear"></div>
+	
+</div>
+
+
+</body>
+</html>
